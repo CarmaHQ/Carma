@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
@@ -25,9 +26,6 @@ import com.feth.play.module.pa.user.NameIdentity;
 @Entity
 @Table(name = "users")
 public class User extends Model {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -40,6 +38,9 @@ public class User extends Model {
 	public String email;
 
 	public String name;
+	
+	@NotNull
+	public Double balance = new Double(0.0);
 
 	public boolean active;
 

@@ -3,12 +3,15 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import play.db.ebean.Model;
 
 import com.feth.play.module.pa.user.AuthUser;
 
 @Entity
+@Table(name = "linked_accounts")
 public class LinkedAccount extends Model {
 	private static final long serialVersionUID = 1L;
 
@@ -16,6 +19,7 @@ public class LinkedAccount extends Model {
 	public Long id;
 
 	@ManyToOne
+	@NotNull
 	public User user;
 
 	public String providerUserId;
