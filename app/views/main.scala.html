@@ -32,6 +32,7 @@
         </div>
         <div class="navbar-collapse collapse navbar-right">
           <p class="navbar-text">Signed in as @controllers.Application.getLocalUser().name</p>
+          <p class="navbar-text">Your balance: @String.format("%1$.2f",controllers.Application.getLocalUser().balance)</p>
         </div><!--/.navbar-collapse -->
       </div>
     </div>
